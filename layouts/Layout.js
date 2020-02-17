@@ -1,15 +1,10 @@
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import Router from 'next/router'
-import React from 'react'
 import Nprogress from 'nprogress'
 import Navbar from '../components/Navbar'
 
-Router.onRouteChangeStart = (url) => {
-  const Console = console
-  Console.log(url)
-  Nprogress.start()
-}
+Router.onRouteChangeStart = () => Nprogress.start()
 
 Router.onRouteChangeComplete = () => Nprogress.done()
 
