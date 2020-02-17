@@ -1,21 +1,31 @@
 import PropTypes from 'prop-types'
 import Head from 'next/head'
-import Router from 'nprogress'
+import Router from 'next/router'
 import React from 'react'
+import Nprogress from 'nprogress'
 import Navbar from '../components/Navbar'
 
 Router.onRouteChangeStart = (url) => {
   const Console = console
   Console.log(url)
+  Nprogress.start()
 }
+
+Router.onRouteChangeComplete = () => Nprogress.done()
+
+Router.onRouteChangeError = () => Nprogress.done()
 
 const Layout = ({ children }) => (
   <div className="root">
     <Head>
       <title> Pofolio | Lwin Moe Paing</title>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/nprogress@0.2.0/nprogress.css"
+      />
     </Head>
     <Navbar />
-    <header> Header</header>
+    <header> Header </header>
     {children}
     <footer> Footer </footer>
 

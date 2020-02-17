@@ -18,6 +18,7 @@ class AppDocument extends Document {
           <NextScript />
         </body>
 
+        {/* Styling Global For Whole Universal Body */}
         <style global jsx>
           {`
 						body {
