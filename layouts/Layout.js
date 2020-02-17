@@ -1,15 +1,26 @@
 import PropTypes from 'prop-types'
-import Navbar from '../src/components/Navbar'
+import Head from 'next/head'
+import Router from 'nprogress'
+import React from 'react'
+import Navbar from '../components/Navbar'
 
-const Layout = ({ children }) => {
-	return (
-		<div className="root">
-			<Navbar />
-			<header> Header</header>
-			{children}
-			<footer> Footer </footer>
+Router.onRouteChangeStart = (url) => {
+  const Console = console
+  Console.log(url)
+}
 
-			<style jsx>{`
+const Layout = ({ children }) => (
+  <div className="root">
+    <Head>
+      <title> Pofolio | Lwin Moe Paing</title>
+    </Head>
+    <Navbar />
+    <header> Header</header>
+    {children}
+    <footer> Footer </footer>
+
+    <style jsx>
+      {`
 				.root {
 					padding: 1rem;
 				}
@@ -19,16 +30,17 @@ const Layout = ({ children }) => {
 				footer {
 					color: blue;
 				}
-			`}</style>
-		</div>
-	)
-}
-
-export default Layout
+			`}
+    </style>
+  </div>
+)
 
 Layout.propTypes = {
-	children: PropTypes.oneOfType([
-		PropTypes.arrayOf(PropTypes.node),
-		PropTypes.node
-	]).isRequired
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 }
+
+
+export default Layout
