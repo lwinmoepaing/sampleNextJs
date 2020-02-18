@@ -10,6 +10,9 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
+  // Body Parser
+  server.use(express.json())
+
   /** Handle By Next App Handler */
   server.get('*', (req, res) => handle(req, res))
 
