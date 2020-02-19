@@ -20,6 +20,6 @@ app.prepare().then(() => {
   server.listen(port, (err) => {
     if (err) throw err
     const Console = console
-    Console.log(`Listening on PORT:${port}`)
+    Console.log(`Listening on PORT:${port}-Dev:${dev}`)
   })
 })

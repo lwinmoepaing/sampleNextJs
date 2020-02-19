@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout'
 const User = ({ users }) => (
   <Layout>
     <h3> User </h3>
-    {users ? (
+    {users && (
       <ul>
         {users.map((userId) => (
           <li key={userId}>
@@ -21,9 +21,7 @@ const User = ({ users }) => (
           </li>
         ))}
       </ul>
-    ) : (
-      ''
-    )}
+    ) }
   </Layout>
 )
 
