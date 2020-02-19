@@ -5,6 +5,7 @@ const NextI18NextInstance = new NextI18Next({
   defaultLanguage: 'en',
   otherLanguages: ['mm'],
   localePath: 'locales',
+  preload: ['en', 'mm'],
 })
 
 export default NextI18NextInstance

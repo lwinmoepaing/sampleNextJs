@@ -9,4 +9,9 @@ const ErrorPage = () => (
   </div>
 )
 
+
+ErrorPage.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+})
+
 export default ErrorPage

@@ -27,7 +27,7 @@ const User = ({ users }) => (
 
 User.getInitialProps = async () => {
   const users = await Array.from({ length: 10 }, (_, i) => i + 1)
-  return { users }
+  return { users, namespacesRequired: ['common'] }
 }
 
 User.propTypes = {
