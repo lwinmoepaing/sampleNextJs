@@ -6,7 +6,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "nodemon ./server/app.js",
 		"build": "next build ./src",
-		"export": "next export ./src && cp ./locales ./src/out",
+		"export": "next export ./src && cp -R ./locales  ./src/out",
 		"start": "node ./server/app.js"
 	},
 	"dependencies": {
