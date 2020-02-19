@@ -7,4 +7,6 @@ module.exports = {
     BASE_API_URL: BASE_API_URL || 'default route',
     PORT,
   },
+  // assetPrefix: '/src',
+  rootServeDir: '/src',
 }

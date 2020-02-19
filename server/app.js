@@ -12,9 +12,14 @@ app.prepare().then(() => {
 
   // Body Parser
   server.use(express.json())
+  server.use('/locales', express.static('./locales'))
+
 
   /** Handle By Next App Handler */
-  server.get('*', (req, res) => handle(req, res))
+  server.get('*', (req, res) => {
+    handle(req, res)
+  })
+
 
   /** Server Listen By Express */
   server.listen(port, (err) => {
